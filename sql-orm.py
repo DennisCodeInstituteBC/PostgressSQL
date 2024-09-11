@@ -1,5 +1,5 @@
 from sqlalchemy import(
-    create_engine, Column, Float, ForeignKey, Interger, String
+    create_engine, Column, Float, ForeignKey, Integer, String
 )
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker
@@ -12,9 +12,9 @@ base = declarative_base()
 
 class Artist(base):
     __tablename__="Album"
-    AlbumId = Column(Interger, primary_key=True)
+    AlbumId = Column(Integer, primary_key=True)
     Title = Column (String)
-    ArtistId = Column(Interger, ForeignKey("Artist.ArtistId"))
+    ArtistId = Column(Integer, ForeignKey("Artist.ArtistId"))
 
 # create a class-based model for the "Track" table
 class Track(base):
